@@ -1,0 +1,43 @@
+<html>
+    <head>
+    <style type="text/css">
+        html, body { height: 100%; margin: 0; padding: 0; }
+        #map { height: 100%; }
+    </style>
+    </head>
+    <body>
+    <div id="map"></div>
+<script type="text/javascript">
+
+
+var initMap = function() {
+    /*艾菲爾鐵塔*/
+    var myCenter =  {lat: 48.858093, lng: 2.294694};
+    /*地圖參數*/
+    var mapProp = {
+        center:myCenter,
+        zoom:16,
+        mapTypeId:google.maps.MapTypeId.ROADMAP
+    };
+
+    map = new google.maps.Map(document.getElementById("map"),mapProp);
+    /*圖釘參數*/
+    var marker = new google.maps.Marker({
+        position:myCenter,
+        icon: 'http://i.imgur.com/WXewkjr.png'
+    });
+
+    /*把地圖的物件丟進marker*/
+    marker.setMap(map);
+}
+
+</script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?callback=initMap">
+</script>
+    </body>
+</html>
+
+<!-- google map docs
+https://developers.google.com/maps/documentation/javascript/tutorial?hl=zh-tw
+-->
